@@ -36,10 +36,7 @@ Item {
     }
   }
 
-  Component.onCompleted: {
-    resizeTimer.start()
-    root.rebuildModels()
-  }
+  Component.onCompleted: resizeTimer.start()
   Component.onDestruction: resizeTimer.stop()
 
   ColumnLayout {
@@ -55,34 +52,6 @@ Item {
     property string editDisplayMode: cfg.displayMode || defaults.displayMode || "text"
     property string editMiddleClickAction: cfg.middleClickAction || defaults.middleClickAction || "previous"
     property int editPollIntervalMs: cfg.pollIntervalMs ?? defaults.pollIntervalMs ?? 750
-    readonly property string currentLanguage: rootItem.pluginApi?.currentLanguage || "en"
-
-    function tr(key) {
-      return rootItem.pluginApi?.tr(key) || key
-    }
-
-    function rebuildModels() {
-      displayModeModel.clear()
-      displayModeModel.append({ "name": tr("settings.display.text"), "key": "text" })
-      displayModeModel.append({ "name": tr("settings.display.flag"), "key": "flag" })
-
-      middleClickModel.clear()
-      middleClickModel.append({ "name": tr("settings.middle.previous"), "key": "previous" })
-      middleClickModel.append({ "name": tr("settings.middle.toggle_display"), "key": "toggle-mode" })
-
-      pollIntervalModel.clear()
-      pollIntervalModel.append({ "name": "250 ms", "key": "250" })
-      pollIntervalModel.append({ "name": "500 ms", "key": "500" })
-      pollIntervalModel.append({ "name": "750 ms", "key": "750" })
-      pollIntervalModel.append({ "name": "1000 ms", "key": "1000" })
-      pollIntervalModel.append({ "name": "1500 ms", "key": "1500" })
-    }
-
-    onCurrentLanguageChanged: rebuildModels()
-
-    ListModel { id: displayModeModel }
-    ListModel { id: middleClickModel }
-    ListModel { id: pollIntervalModel }
 
     function saveSettings() {
       if (!rootItem.pluginApi)
@@ -149,7 +118,10 @@ Item {
           Layout.preferredWidth: 240 * Style.uiScaleRatio
           Layout.preferredHeight: Style.baseWidgetSize
 
-          model: displayModeModel
+          model: ListModel {
+            ListElement { name: "Text: en, ru"; key: "text" }
+            ListElement { name: "Flag: 🇺🇸, 🇷🇺"; key: "flag" }
+          }
 
           currentKey: root.editDisplayMode
 
@@ -193,7 +165,10 @@ Item {
           Layout.preferredWidth: 260 * Style.uiScaleRatio
           Layout.preferredHeight: Style.baseWidgetSize
 
-          model: middleClickModel
+          model: ListModel {
+            ListElement { name: "Previous layout"; key: "previous" }
+            ListElement { name: "Toggle display mode"; key: "toggle-mode" }
+          }
 
           currentKey: root.editMiddleClickAction
 
@@ -237,7 +212,13 @@ Item {
           Layout.preferredWidth: 180 * Style.uiScaleRatio
           Layout.preferredHeight: Style.baseWidgetSize
 
-          model: pollIntervalModel
+          model: ListModel {
+            ListElement { name: "250 ms"; key: "250" }
+            ListElement { name: "500 ms"; key: "500" }
+            ListElement { name: "750 ms"; key: "750" }
+            ListElement { name: "1000 ms"; key: "1000" }
+            ListElement { name: "1500 ms"; key: "1500" }
+          }
 
           currentKey: root.editPollIntervalMs.toString()
 
