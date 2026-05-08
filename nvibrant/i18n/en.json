@@ -1,0 +1,12 @@
+{
+  "bar_widget": {
+    "enabled": "Vibrance On",
+    "disabled": "Vibrance Off"
+  },
+  "settings": {
+    "vibrance_value": "Vibrance Level",
+    "vibrance_value_desc": "Digital vibrance intensity (0 = default, 1023 = maximum saturation)",
+    "display_count": "Display Count",
+    "display_count_desc": "Number of displays/ports to apply vibrance to"
+  }
+}
