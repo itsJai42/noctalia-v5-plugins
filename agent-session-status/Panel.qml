@@ -19,9 +19,9 @@ Item {
   anchors.fill: parent
 
   function statusIcon(status) {
-    if (status === "running") return "play-circle"
+    if (status === "running") return "loader"
     if (status === "blocked") return "alert-triangle"
-    return "check-circle"
+    return "circle-check"
   }
 
   function statusColor(status) {
