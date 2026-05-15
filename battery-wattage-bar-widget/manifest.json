@@ -1,0 +1,16 @@
+{
+  "id": "battery-watt",
+  "name": "Battery Wattage",
+  "version": "1.0.0",
+  "minNoctaliaVersion": "3.6.0",
+  "author": "Piero",
+  "license": "MIT",
+  "description": "Mostra il consumo istantaneo in Watt sulla barra",
+  "tags": [
+    "Bar",
+    "System"
+  ],
+  "entryPoints": {
+    "barWidget": "BarWidget.qml"
+  }
+}
