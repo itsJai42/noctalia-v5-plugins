@@ -181,9 +181,9 @@ ColumnLayout {
             const key = String(modelData || "");
             if (key === "type") return root.typeLabel ? root.typeLabel(root.selectedWallpaperData.type) : "";
             if (key === "dynamic") return root.selectedWallpaperData.dynamic ? pluginApi?.tr("panel.dynamicBadge") : pluginApi?.tr("panel.staticBadge");
-            if (key === "music") return pluginApi?.tr("panel.musicBadge") || "";
-            if (key === "reactive") return pluginApi?.tr("panel.reactiveBadge") || "";
-            if (key === "approved") return pluginApi?.tr("panel.approvedBadge") || "";
+            if (key === "music") return pluginApi?.tr("panel.musicBadge");
+            if (key === "reactive") return pluginApi?.tr("panel.reactiveBadge");
+            if (key === "approved") return pluginApi?.tr("panel.approvedBadge");
             if (key === "resolution") return root.resolutionBadgeLabel ? root.resolutionBadgeLabel(root.selectedWallpaperData.resolution) : "";
             if (key === "compatibility") {
               const cPath = String(root.selectedWallpaperData?.path || "");
