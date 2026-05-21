@@ -366,6 +366,24 @@
       "lastUpdated": "2026-03-20T22:21:12+01:00"
     },
     {
+      "id": "display-settings",
+      "name": "Display Settings",
+      "version": "1.0.0",
+      "official": false,
+      "author": "fstanis",
+      "description": "View live display settings from wlr-randr and permanent niri KDL output configuration",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "3.6.0",
+      "license": "MIT",
+      "tags": [
+        "Bar",
+        "Panel",
+        "System",
+        "Utility"
+      ],
+      "lastUpdated": "2026-05-09T00:32:20+01:00"
+    },
+    {
       "id": "dmenu",
       "name": "Dmenu Provider",
       "version": "1.0.0",
