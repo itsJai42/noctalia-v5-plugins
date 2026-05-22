@@ -30,12 +30,7 @@ Item {
   property var cfg: pluginApi?.pluginSettings || ({})
   property var defaults: pluginApi?.manifest?.metadata?.defaultSettings || ({})
 
-  readonly property string passwordStoreDir: {
-    var configured = cfg.storePath || defaults.storePath || ""
-    if (configured !== "") return configured
-    var envHome = Quickshell.env("HOME") || ""
-    return envHome + "/.password-store"
-  }
+  readonly property string passwordStoreDir: cfg.storePath || defaults.storePath || (Quickshell.env("HOME") || "~") + "/.password-store"
 
   function shellEscape(str) {
     return str.replace(/'/g, "'\\''")
