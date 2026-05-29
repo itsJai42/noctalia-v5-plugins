@@ -11,7 +11,7 @@ Item {
     
     readonly property var mainWidget: pluginApi?.mainInstance || null
 
-    property real contentPreferredWidth: (panelContent.implicitWidth + Style.marginM * 16) * Style.uiScaleRatio
+    property real contentPreferredWidth: (panelContent.implicitWidth + Style.marginM * 10) * Style.uiScaleRatio
     property real contentPreferredHeight: (mainLayout.implicitHeight + Style.marginM * 4) * Style.uiScaleRatio
     
     readonly property var geometryPlaceholder: mainLayout

@@ -35,6 +35,38 @@ Item {
     implicitWidth: contentWidth
     implicitHeight: Style.barHeight
 
+    // ===== Helpers =====
+
+    function parseEta(out) {
+        if (!out) return "...";
+        let lines = out.split("\n");
+        for (let i = 0; i < lines.length; i++) {
+            let line = lines[i].trim();
+            if (line.indexOf("time to empty:") === 0 || line.indexOf("time to full:") === 0) {
+                let value = line.substring(line.indexOf(":") + 1).trim();
+                return formatUpowerTime(value);
+            }
+        }
+        return "...";
+    }
+
+    function formatUpowerTime(value) {
+        let parts = value.split(/\s+/);
+        let num = parseFloat(parts[0]);
+        let unit = parts.length > 1 ? parts[1] : "";
+        if (isNaN(num)) return "...";
+        let minutes = 0;
+        if (unit.indexOf("hour") === 0) minutes = num * 60;
+        else if (unit.indexOf("minute") === 0) minutes = num;
+        else if (unit.indexOf("second") === 0) minutes = num / 60;
+        else if (unit.indexOf("day") === 0) minutes = num * 1440;
+        else return value;
+        let total = Math.round(minutes);
+        let h = Math.floor(total / 60);
+        let m = total % 60;
+        return h > 0 ? (h + "h " + m + "m") : (m + "m");
+    }
+
     // ===== Power Profiles =====
 
     Process {
@@ -90,6 +122,23 @@ Item {
         }
     }
 
+    // ===== ETA via upower =====
+
+    Process {
+        id: etaGetter
+        running: false
+        stdout: StdioCollector {
+            onStreamFinished: {
+                root.timeRemaining = root.parseEta(text);
+            }
+        }
+        onExited: (code) => {
+            if (code !== 0) {
+                root.timeRemaining = "...";
+            }
+        }
+    }
+
     Timer {
         id: globalRefreshTimer
         interval: 2000
@@ -98,9 +147,14 @@ Item {
         triggeredOnStart: true
         onTriggered: {
             let devPath = pluginApi?.pluginSettings?.batteryDevice ?? "/sys/class/power_supply/BAT0";
-            batLoader.device = devPath.split("/").pop() || "BAT0";
+            let dev = devPath.split("/").pop() || "BAT0";
+            batLoader.device = dev;
             batLoader.reload();
             thresholdLoader.reload();
+
+            etaGetter.running = false;
+            etaGetter.command = ["upower", "-i", "/org/freedesktop/UPower/devices/battery_" + dev];
+            etaGetter.running = true;
         }
     }
 
