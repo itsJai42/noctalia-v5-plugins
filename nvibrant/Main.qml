@@ -1,6 +1,5 @@
 import QtQuick
 import Quickshell
-import Quickshell.Io
 import qs.Commons
 
 Item {
@@ -15,13 +14,6 @@ Item {
   // stored 1-based (1 = port 0), converted on use
   readonly property int displayIndex: (cfg.displayIndex ?? defaults.displayIndex ?? 1) - 1
 
-  Process {
-    id: nvibrantProcess
-    stdout: StdioCollector {}
-    stderr: StdioCollector {}
-    onExited: (code) => Logger.i("NVibrant", "exited: " + code)
-  }
-
   function buildCmd(value) {
     var parts = ["nvibrant"]
     for (var i = 0; i < root.displayIndex; i++)
@@ -31,8 +23,7 @@ Item {
   }
 
   function applyVibrance(value) {
-    nvibrantProcess.command = buildCmd(value)
-    nvibrantProcess.running = true
+    Quickshell.execDetached(buildCmd(value))
   }
 
   function toggle() {

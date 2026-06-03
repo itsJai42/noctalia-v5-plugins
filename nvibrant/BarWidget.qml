@@ -1,7 +1,6 @@
 import QtQuick
 import QtQuick.Layouts
 import Quickshell
-import Quickshell.Io
 import qs.Commons
 import qs.Widgets
 import qs.Services.UI
@@ -29,13 +28,6 @@ Item {
   implicitWidth: contentWidth
   implicitHeight: contentHeight
 
-  Process {
-    id: nvibrantProcess
-    stdout: StdioCollector {}
-    stderr: StdioCollector {}
-    onExited: (code) => Logger.i("NVibrant", "exited: " + code)
-  }
-
   function buildCmd(value) {
     var parts = ["nvibrant"]
     for (var i = 0; i < root.displayIndex; i++)
@@ -45,8 +37,7 @@ Item {
   }
 
   function applyVibrance(value) {
-    nvibrantProcess.command = buildCmd(value)
-    nvibrantProcess.running = true
+    Quickshell.execDetached(buildCmd(value))
   }
 
   function toggle() {
