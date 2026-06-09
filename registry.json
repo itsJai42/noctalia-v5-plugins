@@ -17,6 +17,25 @@
       "lastUpdated": "2026-02-04T23:08:01-07:00"
     },
     {
+      "id": "agent-session-status",
+      "name": "Agent Session Status",
+      "version": "1.0.0",
+      "official": false,
+      "author": "nzlov",
+      "description": "Runs a local MCP HTTP service for agents to report session status and shows active sessions in the bar.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.6.6",
+      "license": "MIT",
+      "tags": [
+        "Bar",
+        "Panel",
+        "Development",
+        "Indicator",
+        "AI"
+      ],
+      "lastUpdated": "2026-05-11T13:17:35+08:00"
+    },
+    {
       "id": "air-quality",
       "name": "Air Quality",
       "version": "1.1.2",
@@ -104,6 +123,24 @@
         "System"
       ],
       "lastUpdated": "2026-04-25T13:10:34+02:00"
+    },
+    {
+      "id": "battery-and-power-management",
+      "name": "Battery & Power Management Plugin",
+      "version": "1.0.0",
+      "official": false,
+      "author": "Piero-93",
+      "description": "A lightweight, efficient battery status bar widget and interactive control popup. This plugin displays real-time battery diagnostics (including dynamic power draw in Watts) and provides desktop controls to switch system power profiles or adjust hardware battery charge thresholds safely without needing root privileges.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.0.0",
+      "license": "MIT",
+      "tags": [
+        "Bar",
+        "System",
+        "Indicator",
+        "Utility"
+      ],
+      "lastUpdated": "2026-05-22T12:55:20+02:00"
     },
     {
       "id": "battery-monitor-plus",
@@ -539,6 +576,24 @@
       "lastUpdated": "2026-04-28T17:48:46+02:00"
     },
     {
+      "id": "habitica",
+      "name": "Habitica for Noctalia",
+      "version": "1.0.0",
+      "official": false,
+      "author": "vasqs",
+      "description": "Habitica dashboard and task scorer for Noctalia Shell with official avatar sprite rendering.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "3.7.1",
+      "license": "MIT",
+      "tags": [
+        "Bar",
+        "Panel",
+        "Productivity",
+        "Network"
+      ],
+      "lastUpdated": "2026-06-03T18:12:31-03:00"
+    },
+    {
       "id": "hassio",
       "name": "Home Assistant",
       "version": "1.1.0",
@@ -842,7 +897,7 @@
     {
       "id": "mangowc-layout-switcher",
       "name": "mango layout switcher",
-      "version": "3.0.0",
+      "version": "3.1.0",
       "official": false,
       "author": "atheeq-rhxn",
       "description": "Switch between different mangowc layouts",
@@ -854,7 +909,7 @@
         "Panel",
         "MangoWC"
       ],
-      "lastUpdated": "2026-05-25T17:44:15+05:30"
+      "lastUpdated": "2026-06-01T10:45:53+05:30"
     },
     {
       "id": "mawaqit",
@@ -910,7 +965,7 @@
     {
       "id": "mirror-mirror",
       "name": "Mirror Mirror",
-      "version": "0.1.3",
+      "version": "0.1.4",
       "official": false,
       "author": "Mathew-D",
       "description": "Mirror one monitor to another using wl-mirror.",
@@ -923,7 +978,7 @@
         "Utility",
         "System"
       ],
-      "lastUpdated": "2026-04-27T17:12:06-04:00"
+      "lastUpdated": "2026-06-06T11:14:18+02:00"
     },
     {
       "id": "model-usage",
@@ -1204,6 +1259,23 @@
       "lastUpdated": "2026-05-22T19:50:34-04:00"
     },
     {
+      "id": "niri-urgent-on-notification",
+      "name": "Set Niri Window to Urgent on Notification",
+      "version": "1.0.0",
+      "official": false,
+      "author": "matt-hb",
+      "description": "Sets windows to urgent when they receive a notification and sets them back to normal when their notifications are cleared (Niri only!)",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "3.6.0",
+      "license": "MIT",
+      "tags": [
+        "System",
+        "Utility",
+        "Niri"
+      ],
+      "lastUpdated": "2026-06-02T22:54:32+02:00"
+    },
+    {
       "id": "niri-workspaces",
       "name": "Niri Workspaces",
       "version": "1.0.0",
@@ -1304,6 +1376,23 @@
         "Indicator"
       ],
       "lastUpdated": "2026-04-10T15:49:56+02:00"
+    },
+    {
+      "id": "nvibrant",
+      "name": "NVibrant",
+      "version": "1.0.1",
+      "official": false,
+      "author": "NoFilterA1",
+      "description": "Toggle NVIDIA digital vibrance (color saturation) via nvibrant.",
+      "repository": "https://github.com/noctalia-dev/noctalia-plugins",
+      "minNoctaliaVersion": "4.0.0",
+      "license": "MIT",
+      "tags": [
+        "Bar",
+        "System",
+        "Gaming"
+      ],
+      "lastUpdated": "2026-06-03T21:57:59+02:00"
     },
     {
       "id": "nvim-session-provider",
@@ -1822,7 +1911,7 @@
     {
       "id": "tailscale",
       "name": "Tailscale",
-      "version": "1.5.1",
+      "version": "1.5.2",
       "official": false,
       "author": "nineluj",
       "description": "Show Tailscale status in the menu bar and send/receive files via Taildrop.",
@@ -1834,7 +1923,7 @@
         "Network",
         "Panel"
       ],
-      "lastUpdated": "2026-05-17T22:05:33-05:00"
+      "lastUpdated": "2026-06-01T09:39:19+01:00"
     },
     {
       "id": "tamagotchi",

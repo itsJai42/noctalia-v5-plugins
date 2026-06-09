@@ -23,6 +23,8 @@ Item {
     }
   }
 
+  property bool useNewIpc: false
+
   readonly property var availableLayouts: [
     { code: "T",  name: "Tile" },
     { code: "S",  name: "Scroller" },
@@ -73,8 +75,8 @@ Item {
   // ===== PROCESSES =====
 
   Process {
-    id: eventWatcher
-    command: ["mmsg", "watch", "all-monitors"]
+    id: ipcProbe
+    command: ["mmsg", "get", "all-monitors"]
     running: true
 
     stdout: SplitParser {
@@ -82,31 +84,75 @@ Item {
         try {
           var json = JSON.parse(line)
           if (json.monitors) {
-            for (var i = 0; i < json.monitors.length; i++) {
-              var m = json.monitors[i]
-              internal.updateLayout(m.name, m.layout_symbol)
+            root.useNewIpc = true
+          }
+        } catch (e) {}
+        ipcProbe.running = false
+      }
+    }
+
+    onExited: exitCode => {
+      eventWatcher.start()
+      monitorsQuery.start()
+    }
+  }
+
+  Process {
+    id: eventWatcher
+    command: []
+    running: false
+
+    stdout: SplitParser {
+      onRead: line => {
+        if (root.useNewIpc) {
+          try {
+            var json = JSON.parse(line)
+            if (json.monitors) {
+              for (var i = 0; i < json.monitors.length; i++) {
+                var m = json.monitors[i]
+                internal.updateLayout(m.name, m.layout_symbol)
+              }
+            }
+          } catch (e) {
+            Logger.w("mangowc-layout-switcher: parse error: " + e)
+          }
+        } else {
+          if (line.includes(" layout ")) {
+            var match = line.match(/^(\S+)\s+layout\s+(\S+)$/)
+            if (match) {
+              internal.updateLayout(match[1], match[2])
             }
           }
-        } catch (e) {
-          Logger.w("mangowc-layout-switcher: parse error: " + e)
         }
       }
+    }
+
+    function start() {
+      command = root.useNewIpc ? ["mmsg", "watch", "all-monitors"] : ["mmsg", "-w"]
+      running = true
     }
   }
 
   Process {
     id: monitorsQuery
-    command: ["mmsg", "get", "all-monitors"]
+    command: []
     running: false
     property var tempArray: []
 
     stdout: SplitParser {
       onRead: line => {
-        try {
-          var json = JSON.parse(line)
-          if (json.monitors)
-            monitorsQuery.tempArray = json.monitors.map(m => m.name)
-        } catch (e) {}
+        if (root.useNewIpc) {
+          try {
+            var json = JSON.parse(line)
+            if (json.monitors)
+              monitorsQuery.tempArray = json.monitors.map(m => m.name)
+          } catch (e) {}
+        } else {
+          const m = line.trim()
+          if (m && !monitorsQuery.tempArray.includes(m)) {
+            monitorsQuery.tempArray.push(m)
+          }
+        }
       }
     }
 
@@ -114,33 +160,44 @@ Item {
       if (exitCode === 0) root.availableMonitors = monitorsQuery.tempArray
       monitorsQuery.tempArray = []
     }
-  }
 
-  Component.onCompleted: {
-    monitorsQuery.running = true
+    function start() {
+      command = root.useNewIpc ? ["mmsg", "get", "all-monitors"] : ["mmsg", "-O"]
+      running = true
+    }
   }
 
   // ===== PUBLIC API =====
 
   function refresh() {
-    monitorsQuery.running = true
-    if (!eventWatcher.running) eventWatcher.running = true
+    monitorsQuery.start()
+    if (!eventWatcher.running) eventWatcher.start()
   }
 
   function setLayout(monitorName, layoutCode) {
     if (!monitorName || !layoutCode) return
-    var dispatchName = root.layoutDispatchMap[layoutCode] || layoutCode
-    Quickshell.execDetached(["mmsg", "dispatch", "focusmon," + monitorName])
-    Quickshell.execDetached(["mmsg", "dispatch", "setlayout," + dispatchName])
+
+    if (root.useNewIpc) {
+      var dispatchName = root.layoutDispatchMap[layoutCode] || layoutCode
+      Quickshell.execDetached(["mmsg", "dispatch", "focusmon," + monitorName])
+      Quickshell.execDetached(["mmsg", "dispatch", "setlayout," + dispatchName])
+    } else {
+      Quickshell.execDetached(["mmsg", "-o", monitorName, "-s", "-l", layoutCode])
+    }
+
     internal.updateLayout(monitorName, layoutCode)
   }
 
   function setLayoutGlobally(layoutCode) {
-    var dispatchName = root.layoutDispatchMap[layoutCode] || layoutCode
-    root.availableMonitors.forEach(m => {
-      Quickshell.execDetached(["mmsg", "dispatch", "focusmon," + m])
-      Quickshell.execDetached(["mmsg", "dispatch", "setlayout," + dispatchName])
-    })
+    if (root.useNewIpc) {
+      var dispatchName = root.layoutDispatchMap[layoutCode] || layoutCode
+      root.availableMonitors.forEach(m => {
+        Quickshell.execDetached(["mmsg", "dispatch", "focusmon," + m])
+        Quickshell.execDetached(["mmsg", "dispatch", "setlayout," + dispatchName])
+      })
+    } else {
+      root.availableMonitors.forEach(m => setLayout(m, layoutCode))
+    }
     ToastService.showNotice("Global layout set: " + layoutCode)
   }
 }
