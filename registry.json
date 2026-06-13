@@ -1563,7 +1563,7 @@
     {
       "id": "privacy-indicator",
       "name": "Privacy Indicator",
-      "version": "1.2.12",
+      "version": "1.2.13",
       "official": true,
       "author": "Noctalia Team",
       "description": "A privacy indicator widget that shows when microphone, camera or screen sharing is active.",
@@ -1575,7 +1575,7 @@
         "Privacy",
         "Indicator"
       ],
-      "lastUpdated": "2026-04-21T01:35:58+02:00"
+      "lastUpdated": "2026-06-12T22:31:50+02:00"
     },
     {
       "id": "protonvpn",
