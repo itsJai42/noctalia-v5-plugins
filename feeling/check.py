@@ -41,4 +41,25 @@ builtin = {"closePanel"}  # panel.close is wrapped; allow well-known names
 missing = handlers - defined - builtin
 assert not missing, f"onClick handlers with no function: {missing}"
 
+# --- service logic mirror (keep in sync with service.luau parseCsv/buildState) ---
+import datetime
+
+def py_parse(text):
+    m = {}
+    for line in text.splitlines():
+        mt = re.match(r"^(\d{4}-\d{2}-\d{2}),(\d+)$", line)
+        if mt:
+            m[mt.group(1)] = int(mt.group(2))
+    return m
+
+def py_week(m, today):
+    return [m.get((today - datetime.timedelta(days=i)).isoformat()) for i in range(6, -1, -1)]
+
+today = datetime.date(2026, 6, 28)
+csv = "date,feeling\n2026-06-28,7\n2026-06-27,3\n2026-06-25,9\nbad,row\n"
+parsed = py_parse(csv)
+assert parsed == {"2026-06-28": 7, "2026-06-27": 3, "2026-06-25": 9}, parsed
+assert parsed.get("2026-06-28") == 7  # today
+assert py_week(parsed, today) == [None, None, None, 9, None, 3, 7], py_week(parsed, today)  # last 7d: 22..28
+
 print("Feeling manifest, entries, settings, translations, and handlers valid")
