@@ -313,3 +313,15 @@ description = "Search the web or open URLs from the launcher."
 min_noctalia = "5.0.0"
 tags = ["launcher", "utility"]
 dependencies = ["xdg-utils"]
+
+[[plugin]]
+id = "noctalia/zen-note"
+name = "Zen Note"
+version = "1.0.0"
+author = "Jai"
+license = "MIT"
+icon = "sparkles"
+description = "A cozy desktop note that rotates inspirational quotes from ZenQuotes."
+min_noctalia = "5.0.0"
+tags = ["desktop", "network", "productivity"]
+dependencies = ["xdg-utils"]
