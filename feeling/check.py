@@ -35,7 +35,8 @@ for key in re.findall(r'noctalia\.tr\("([^"]+)"', source):
     has_key(translations, key)
 
 # every onClick="name" must have a matching `function name`
-handlers = set(re.findall(r'onClick\s*=\s*"([^"]+)"', source))
+# skip dynamically-built handlers like onClick = "log" .. n
+handlers = set(re.findall(r'onClick\s*=\s*"([^"]+)"(?!\s*\.\.)', source))
 defined = set(re.findall(r'function\s+([A-Za-z_]\w*)\s*\(', source))
 builtin = {"closePanel"}  # panel.close is wrapped; allow well-known names
 missing = handlers - defined - builtin

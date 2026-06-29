@@ -108,7 +108,6 @@ local function request(n)
   noctalia.state.set("feeling-log-request", { value = n, at = os.clock() })
 end
 
-function log() request() end
 function log1() request(1) end
 function log2() request(2) end
 function log3() request(3) end
