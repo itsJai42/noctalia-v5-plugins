@@ -5,7 +5,7 @@ local data = {}
 -- mood value -> theme color token (mirrors feeling/src/display/mod.rs buckets)
 local function bucket(v)
   v = tonumber(v)
-  if not v then return "outline" end
+  if not v or v < 1 then return "outline" end
   if v >= 7 then return "primary" end
   if v >= 4 then return "secondary" end
   return "error"
