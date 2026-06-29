@@ -1,0 +1,19 @@
+{
+  "title": "Zen Note",
+  "loading": "Finding a quiet thought…",
+  "next_at": "Next at {time}",
+  "attribution": "Quotes by ZenQuotes.io",
+  "fetch_failed": "Could not reach ZenQuotes. Keeping your last note.",
+  "empty_response": "ZenQuotes returned no usable quotes.",
+  "settings": {
+    "quote_interval": "Quote schedule (minutes)",
+    "quote_interval_description": "How often the desktop note rotates to another cached quote.",
+    "max_quote_length": "Maximum quote length",
+    "max_quote_length_description": "Prefer quotes that fit comfortably on the note.",
+    "card_width": "Note width",
+    "card_height": "Note height",
+    "quote_font_size": "Quote font size",
+    "host_background": "Extra host background",
+    "host_background_description": "Normally off because Zen Note draws its own themed card."
+  }
+}

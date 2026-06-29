@@ -1,0 +1,73 @@
+id = "noctalia/zen-note"
+name = "Zen Note"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "Jai"
+license = "MIT"
+dependencies = ["xdg-utils"]
+tags = ["desktop", "network", "productivity"]
+icon = "sparkles"
+description = "A cozy desktop note that rotates inspirational quotes from ZenQuotes."
+
+[[setting]]
+key = "quote_interval_minutes"
+type = "int"
+label_key = "settings.quote_interval"
+description_key = "settings.quote_interval_description"
+default = 60
+min = 15
+max = 1440
+step = 15
+
+[[setting]]
+key = "max_quote_length"
+type = "int"
+label_key = "settings.max_quote_length"
+description_key = "settings.max_quote_length_description"
+default = 220
+min = 80
+max = 500
+step = 20
+
+[[service]]
+id = "quote-service"
+entry = "service.luau"
+
+[[desktop_widget]]
+id = "quote-card"
+entry = "desktop.luau"
+
+[[desktop_widget.setting]]
+key = "card_width"
+type = "int"
+label_key = "settings.card_width"
+default = 380
+min = 280
+max = 640
+step = 20
+
+[[desktop_widget.setting]]
+key = "card_height"
+type = "int"
+label_key = "settings.card_height"
+default = 250
+min = 200
+max = 520
+step = 20
+
+[[desktop_widget.setting]]
+key = "quote_font_size"
+type = "int"
+label_key = "settings.quote_font_size"
+default = 20
+min = 14
+max = 34
+step = 1
+
+[[desktop_widget.setting]]
+key = "background"
+type = "bool"
+label_key = "settings.host_background"
+description_key = "settings.host_background_description"
+default = false
+advanced = true
