@@ -1,0 +1,36 @@
+id = "noctalia/web-search"
+name = "Web Search"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Rigelyon"
+license = "MIT"
+dependencies = ["xdg-utils"]
+tags = ["launcher", "utility"]
+icon = "world-search"
+description = "Search the web or open URLs from the launcher."
+
+[[launcher_provider]]
+id = "web"
+entry = "web.luau"
+prefix = "/web"
+glyph = "world-search"
+include_in_global_search = true
+debounce_ms = 250
+
+  [[launcher_provider.setting]]
+  key = "search_engine"
+  type = "select"
+  label_key = "settings.engine"
+  default = "google"
+  options = [
+    { value = "google", label_key = "settings.engines.google" },
+    { value = "duckduckgo", label_key = "settings.engines.duckduckgo" },
+    { value = "bing", label_key = "settings.engines.bing" },
+    { value = "brave", label_key = "settings.engines.brave" },
+  ]
+
+  [[launcher_provider.setting]]
+  key = "direct_url"
+  type = "bool"
+  label_key = "settings.direct_url"
+  default = true

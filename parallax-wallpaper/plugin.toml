@@ -1,0 +1,19 @@
+id = "noctalia/parallax-wallpaper"
+name = "Parallax Wallpaper"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Noctalia Community"
+license = "MIT"
+dependencies = []
+tags = ["wallpaper"]
+icon = "photo-off"
+description = "Compatibility notice for the former QML parallax background plugin."
+deprecated = true
+
+[[panel]]
+id = "compatibility"
+entry = "compatibility.luau"
+width = 460
+height = 260
+placement = "floating"
+position = "center"

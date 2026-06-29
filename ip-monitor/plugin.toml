@@ -1,0 +1,34 @@
+id = "noctalia/ip-monitor"
+name = "IP Monitor"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "deepalpha"
+license = "MIT"
+dependencies = []
+tags = ["bar", "network"]
+icon = "network"
+description = "Show the current public IP address and network details."
+
+[[setting]]
+key = "refresh_seconds"
+type = "int"
+label_key = "settings.refresh_seconds"
+default = 300
+min = 30
+max = 3600
+
+[[service]]
+id = "ip-service"
+entry = "service.luau"
+
+[[widget]]
+id = "ip"
+entry = "widget.luau"
+
+[[panel]]
+id = "ip-panel"
+entry = "panel.luau"
+width = 400
+height = 360
+placement = "attached"
+position = "auto"

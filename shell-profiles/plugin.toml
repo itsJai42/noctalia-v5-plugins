@@ -1,0 +1,28 @@
+id = "noctalia/shell-profiles"
+name = "Profiles"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Archlexx"
+license = "MIT"
+dependencies = []
+tags = ["panel", "theming", "utility"]
+icon = "wand"
+description = "Save and apply Noctalia v5 settings profiles."
+
+[[setting]]
+key = "profiles_directory"
+type = "folder"
+label_key = "settings.profiles_directory"
+default = "~/.local/state/noctalia/profiles"
+
+[[widget]]
+id = "profiles"
+entry = "widget.luau"
+
+[[panel]]
+id = "profiles-panel"
+entry = "panel.luau"
+width = 520
+height = 600
+placement = "floating"
+position = "center"

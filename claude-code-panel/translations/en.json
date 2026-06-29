@@ -1,0 +1,4 @@
+{
+  "title": "Claude Code", "empty": "Enter a prompt below", "placeholder": "Ask Claude Code...", "send": "Send", "running": "Claude is working...", "failed": "Claude Code failed",
+  "settings": { "binary": "Claude binary", "working_directory": "Working directory", "model": "Model", "model_description": "Leave empty to use the Claude default", "permission_mode": "Permission mode", "permissions": { "default": "Default", "accept_edits": "Accept edits", "plan": "Plan" } }
+}
