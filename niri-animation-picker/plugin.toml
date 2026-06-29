@@ -1,0 +1,38 @@
+id = "noctalia/niri-animation-picker"
+name = "Niri Animation Picker"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Duncan-Rose"
+license = "MIT"
+dependencies = ["niri"]
+tags = ["niri", "theming"]
+icon = "sparkles"
+description = "Pick a KDL animation preset and include it from the Niri config."
+
+[[setting]]
+key = "animations_folder"
+type = "folder"
+label_key = "settings.animations_folder"
+default = "~/.config/niri/animations"
+
+[[setting]]
+key = "target_file"
+type = "string"
+label_key = "settings.target_file"
+default = "~/.config/niri/config.kdl"
+
+[[widget]]
+id = "animations"
+entry = "widget.luau"
+
+[[panel]]
+id = "animation-panel"
+entry = "panel.luau"
+width = 460
+height = 540
+placement = "attached"
+position = "auto"
+
+[[shortcut]]
+id = "animation-shortcut"
+entry = "shortcut.luau"

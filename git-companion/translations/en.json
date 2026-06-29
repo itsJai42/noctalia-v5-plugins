@@ -1,0 +1,4 @@
+{
+  "title": "Git Companion", "issues": "Open issues", "requests": "Open PRs/MRs", "summary": "{issues} issues, {requests} PRs/MRs", "configure_repo": "Configure a repository", "fetch_failed": "Could not query the repository",
+  "settings": { "platform": "Platform", "repository": "Repository", "repository_description": "owner/name or GitLab project path", "refresh_seconds": "Refresh interval (seconds)", "platforms": { "github": "GitHub", "gitlab": "GitLab" } }
+}

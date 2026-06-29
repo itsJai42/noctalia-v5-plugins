@@ -1,0 +1,52 @@
+id = "noctalia/claude-code-panel"
+name = "Claude Code Panel"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "d7om"
+license = "MIT"
+dependencies = ["claude"]
+tags = ["ai", "panel", "productivity"]
+icon = "sparkles"
+description = "Send prompts to Claude Code from a Noctalia panel."
+
+[[setting]]
+key = "binary"
+type = "string"
+label_key = "settings.binary"
+default = "claude"
+
+[[setting]]
+key = "working_directory"
+type = "folder"
+label_key = "settings.working_directory"
+default = ""
+
+[[setting]]
+key = "model"
+type = "string"
+label_key = "settings.model"
+description_key = "settings.model_description"
+default = ""
+
+[[setting]]
+key = "permission_mode"
+type = "select"
+label_key = "settings.permission_mode"
+default = "default"
+options = [
+  { value = "default", label_key = "settings.permissions.default" },
+  { value = "acceptEdits", label_key = "settings.permissions.accept_edits" },
+  { value = "plan", label_key = "settings.permissions.plan" },
+]
+
+[[widget]]
+id = "claude"
+entry = "widget.luau"
+
+[[panel]]
+id = "claude-panel"
+entry = "panel.luau"
+width = 620
+height = 700
+placement = "floating"
+position = "center_right"

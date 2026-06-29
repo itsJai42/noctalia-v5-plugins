@@ -1,0 +1,58 @@
+id = "noctalia/arch-updater"
+name = "Arch Updater"
+version = "3.0.0"
+min_noctalia = "5.0.0"
+author = "Ast"
+license = "MIT"
+dependencies = ["pacman-contrib", "paru", "flatpak"]
+tags = ["bar", "panel", "system"]
+icon = "arrow-big-down-lines"
+description = "Show and install Arch, AUR, and Flatpak updates."
+
+[[setting]]
+key = "system_cmd"
+type = "string"
+label_key = "settings.system_cmd"
+default = "checkupdates 2>/dev/null"
+
+[[setting]]
+key = "aur_cmd"
+type = "string"
+label_key = "settings.aur_cmd"
+default = "paru -Qua 2>/dev/null"
+
+[[setting]]
+key = "include_flatpak"
+type = "bool"
+label_key = "settings.include_flatpak"
+default = true
+
+[[setting]]
+key = "update_cmd"
+type = "string"
+label_key = "settings.update_cmd"
+default = "paru; flatpak update"
+
+[[setting]]
+key = "refresh_minutes"
+type = "int"
+label_key = "settings.refresh_minutes"
+default = 120
+min = 1
+max = 1440
+
+[[widget]]
+id = "updates"
+entry = "widget.luau"
+
+[[panel]]
+id = "updates-panel"
+entry = "panel.luau"
+width = 540
+height = 560
+placement = "attached"
+position = "auto"
+
+[[shortcut]]
+id = "updates-shortcut"
+entry = "shortcut.luau"

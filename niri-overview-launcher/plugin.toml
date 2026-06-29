@@ -1,0 +1,14 @@
+id = "noctalia/niri-overview-launcher"
+name = "Niri Overview Launcher"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Noctalia Community"
+license = "MIT"
+dependencies = ["niri"]
+tags = ["niri", "shortcut"]
+icon = "layout-dashboard"
+description = "Toggle the Niri overview from the control center."
+
+[[shortcut]]
+id = "overview"
+entry = "overview.luau"

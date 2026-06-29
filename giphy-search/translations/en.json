@@ -1,0 +1,13 @@
+{
+  "title": "Giphy Search",
+  "missing_key": "Set a Giphy API key in plugin settings",
+  "untitled": "Untitled GIF",
+  "copy_url": "Copy GIF URL",
+  "copied": "GIF URL copied",
+  "settings": {
+    "api_key": "Giphy API key",
+    "api_key_description": "Create a key at developers.giphy.com",
+    "rating": "Content rating",
+    "ratings": { "g": "G", "pg": "PG", "pg13": "PG-13", "r": "R" }
+  }
+}

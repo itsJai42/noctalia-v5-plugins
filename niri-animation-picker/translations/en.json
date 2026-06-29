@@ -1,0 +1,1 @@
+{ "title": "Niri Animation Picker", "empty": "No KDL presets found", "found": "{count} presets found", "applied": "Applied {file}", "write_failed": "Could not update the Niri config", "settings": { "animations_folder": "Animations folder", "target_file": "Niri config file" } }

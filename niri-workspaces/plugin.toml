@@ -1,0 +1,17 @@
+id = "noctalia/niri-workspaces"
+name = "Niri Workspaces"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Kohányi Róbert"
+license = "MIT"
+dependencies = ["niri"]
+tags = ["launcher", "niri"]
+icon = "layout-grid"
+description = "Filter and focus Niri workspaces from the launcher."
+
+[[launcher_provider]]
+id = "workspaces"
+entry = "workspaces.luau"
+prefix = "/ws"
+glyph = "layout-grid"
+include_in_global_search = false

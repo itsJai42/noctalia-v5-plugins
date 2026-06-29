@@ -1,0 +1,40 @@
+id = "noctalia/tailscale"
+name = "Tailscale"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "nineluj"
+license = "MIT"
+dependencies = ["tailscale"]
+tags = ["bar", "network"]
+icon = "network"
+description = "Show Tailscale status and connected peers."
+
+[[setting]]
+key = "poll_seconds"
+type = "int"
+label_key = "settings.poll_seconds"
+default = 5
+min = 2
+max = 300
+
+[[setting]]
+key = "show_ip"
+type = "bool"
+label_key = "settings.show_ip"
+default = true
+
+[[service]]
+id = "tailscale-service"
+entry = "service.luau"
+
+[[widget]]
+id = "tailscale"
+entry = "widget.luau"
+
+[[panel]]
+id = "tailscale-panel"
+entry = "panel.luau"
+width = 560
+height = 600
+placement = "attached"
+position = "auto"

@@ -1,0 +1,315 @@
+# Generated from */plugin.toml. Plugin manifests remain authoritative.
+
+[[plugin]]
+id = "noctalia/air-quality"
+name = "Air Quality"
+version = "2.0.0"
+author = "adriamartin91"
+license = "MIT"
+icon = "wind"
+description = "Display current air quality from Open-Meteo."
+min_noctalia = "5.0.0"
+tags = ["bar", "panel", "weather"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/arch-updater"
+name = "Arch Updater"
+version = "3.0.0"
+author = "Ast"
+license = "MIT"
+icon = "arrow-big-down-lines"
+description = "Show and install Arch, AUR, and Flatpak updates."
+min_noctalia = "5.0.0"
+tags = ["bar", "panel", "system"]
+dependencies = ["pacman-contrib", "paru", "flatpak"]
+
+[[plugin]]
+id = "noctalia/claude-code-panel"
+name = "Claude Code Panel"
+version = "1.0.0"
+author = "d7om"
+license = "MIT"
+icon = "sparkles"
+description = "Send prompts to Claude Code from a Noctalia panel."
+min_noctalia = "5.0.0"
+tags = ["ai", "panel", "productivity"]
+dependencies = ["claude"]
+
+[[plugin]]
+id = "noctalia/giphy-search"
+name = "Giphy Search"
+version = "2.0.0"
+author = "Sergio Mendolia"
+license = "MIT"
+icon = "gif"
+description = "Search Giphy from the launcher and copy GIF URLs."
+min_noctalia = "5.0.0"
+tags = ["launcher", "fun"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/git-companion"
+name = "Git Companion"
+version = "2.0.0"
+author = "Thomas Philippo"
+license = "MIT"
+icon = "brand-git"
+description = "Show open issue and pull-request counts for a GitHub or GitLab repository."
+min_noctalia = "5.0.0"
+tags = ["bar", "development"]
+dependencies = ["jq", "gh or glab"]
+
+[[plugin]]
+id = "noctalia/ip-monitor"
+name = "IP Monitor"
+version = "1.0.0"
+author = "deepalpha"
+license = "MIT"
+icon = "network"
+description = "Show the current public IP address and network details."
+min_noctalia = "5.0.0"
+tags = ["bar", "network"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/model-usage"
+name = "Model Usage"
+version = "1.0.0"
+author = "cmptr"
+license = "MIT"
+icon = "chart-bar"
+description = "Show local Claude Code or Codex session statistics."
+min_noctalia = "5.0.0"
+tags = ["bar", "ai", "productivity"]
+dependencies = ["jq"]
+
+[[plugin]]
+id = "noctalia/niri-animation-picker"
+name = "Niri Animation Picker"
+version = "2.0.0"
+author = "Duncan-Rose"
+license = "MIT"
+icon = "sparkles"
+description = "Pick a KDL animation preset and include it from the Niri config."
+min_noctalia = "5.0.0"
+tags = ["niri", "theming"]
+dependencies = ["niri"]
+
+[[plugin]]
+id = "noctalia/niri-auto-tile"
+name = "Niri Auto Tile"
+version = "2.0.0"
+author = "Noctalia Community"
+license = "MIT"
+icon = "layout-columns"
+description = "Automatically size Niri columns with the bundled daemon."
+min_noctalia = "5.0.0"
+tags = ["niri", "bar", "utility"]
+dependencies = ["python", "niri"]
+
+[[plugin]]
+id = "noctalia/niri-layout-indicator"
+name = "Niri Layout Indicator"
+version = "1.0.0"
+author = "Alnrog"
+license = "MIT"
+icon = "language"
+description = "Display and switch the active Niri keyboard layout."
+min_noctalia = "5.0.0"
+tags = ["bar", "niri", "keyboard"]
+dependencies = ["niri"]
+
+[[plugin]]
+id = "noctalia/niri-overview-launcher"
+name = "Niri Overview Launcher"
+version = "2.0.0"
+author = "Noctalia Community"
+license = "MIT"
+icon = "layout-dashboard"
+description = "Toggle the Niri overview from the control center."
+min_noctalia = "5.0.0"
+tags = ["niri", "shortcut"]
+dependencies = ["niri"]
+
+[[plugin]]
+id = "noctalia/niri-screensaver"
+name = "Niri Screensaver"
+version = "1.0.0"
+author = "jfreed-dev"
+license = "GPL-3.0-only"
+icon = "device-desktop-pause"
+description = "Launch and stop the Niri terminal screensaver."
+min_noctalia = "5.0.0"
+tags = ["niri", "bar", "utility"]
+dependencies = ["niri-screensaver-launch"]
+
+[[plugin]]
+id = "noctalia/niri-urgent-on-notification"
+name = "Niri Urgent Windows"
+version = "2.0.0"
+author = "matt-hb"
+license = "MIT"
+icon = "alert-circle"
+description = "Mark matching Niri windows urgent through plugin IPC."
+min_noctalia = "5.0.0"
+tags = ["niri", "utility"]
+dependencies = ["niri"]
+
+[[plugin]]
+id = "noctalia/niri-workspaces"
+name = "Niri Workspaces"
+version = "2.0.0"
+author = "Kohányi Róbert"
+license = "MIT"
+icon = "layout-grid"
+description = "Filter and focus Niri workspaces from the launcher."
+min_noctalia = "5.0.0"
+tags = ["launcher", "niri"]
+dependencies = ["niri"]
+
+[[plugin]]
+id = "noctalia/noctalia-calculator"
+name = "Noctalia Calculator"
+version = "2.0.0"
+author = "Noctalia Community"
+license = "MIT"
+icon = "calculator"
+description = "Evaluate calculations with qalc from a Noctalia panel."
+min_noctalia = "5.0.0"
+tags = ["panel", "utility"]
+dependencies = ["libqalculate"]
+
+[[plugin]]
+id = "noctalia/obs-control"
+name = "OBS Control"
+version = "2.0.0"
+author = "Noctalia Community"
+license = "MIT"
+icon = "video"
+description = "Control OBS recording, streaming, and replay through obs-cmd."
+min_noctalia = "5.0.0"
+tags = ["bar", "recording"]
+dependencies = ["obs-cmd"]
+
+[[plugin]]
+id = "noctalia/obsidian-provider"
+name = "Obsidian Vaults"
+version = "2.0.0"
+author = "Sergio Mendolia"
+license = "MIT"
+icon = "brand-obsidian"
+description = "Open Obsidian vaults from the launcher."
+min_noctalia = "5.0.0"
+tags = ["launcher", "productivity"]
+dependencies = ["xdg-utils"]
+
+[[plugin]]
+id = "noctalia/parallax-wallpaper"
+name = "Parallax Wallpaper"
+version = "2.0.0"
+author = "Noctalia Community"
+license = "MIT"
+icon = "photo-off"
+description = "Compatibility notice for the former QML parallax background plugin."
+deprecated = true
+min_noctalia = "5.0.0"
+tags = ["wallpaper"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/plugin-manager"
+name = "Plugin Manager"
+version = "2.0.0"
+author = "Noctalia Community"
+license = "MIT"
+icon = "puzzle"
+description = "Compatibility notice: plugin management is built into Noctalia v5."
+deprecated = true
+min_noctalia = "5.0.0"
+tags = ["utility"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/protonvpn"
+name = "ProtonVPN Status"
+version = "2.0.0"
+author = "blessonmathewsam"
+license = "MIT"
+icon = "shield-lock"
+description = "Show and control ProtonVPN from the bar."
+min_noctalia = "5.0.0"
+tags = ["bar", "network", "privacy"]
+dependencies = ["protonvpn"]
+
+[[plugin]]
+id = "noctalia/shell-profiles"
+name = "Profiles"
+version = "2.0.0"
+author = "Archlexx"
+license = "MIT"
+icon = "wand"
+description = "Save and apply Noctalia v5 settings profiles."
+min_noctalia = "5.0.0"
+tags = ["panel", "theming", "utility"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/steam-price-watcher"
+name = "Steam Price Watcher"
+version = "2.0.0"
+author = "Lokize"
+license = "MIT"
+icon = "brand-steam"
+description = "Watch Steam app prices and notify when targets are reached."
+min_noctalia = "5.0.0"
+tags = ["bar", "games"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/sticky-notes"
+name = "Sticky Notes"
+version = "1.0.0"
+author = "sapjax"
+license = "MIT"
+icon = "note"
+description = "Keep quick local notes in a Noctalia panel."
+min_noctalia = "5.0.0"
+tags = ["bar", "productivity"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/tailscale"
+name = "Tailscale"
+version = "2.0.0"
+author = "nineluj"
+license = "MIT"
+icon = "network"
+description = "Show Tailscale status and connected peers."
+min_noctalia = "5.0.0"
+tags = ["bar", "network"]
+dependencies = ["tailscale"]
+
+[[plugin]]
+id = "noctalia/wallcards"
+name = "Wallcards"
+version = "1.0.0"
+author = "tonigineer"
+license = "MIT"
+icon = "photo"
+description = "Browse local image wallpapers and apply them."
+min_noctalia = "5.0.0"
+tags = ["wallpaper", "panel"]
+dependencies = []
+
+[[plugin]]
+id = "noctalia/web-search"
+name = "Web Search"
+version = "2.0.0"
+author = "Rigelyon"
+license = "MIT"
+icon = "world-search"
+description = "Search the web or open URLs from the launcher."
+min_noctalia = "5.0.0"
+tags = ["launcher", "utility"]
+dependencies = ["xdg-utils"]

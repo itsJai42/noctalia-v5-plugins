@@ -1,0 +1,19 @@
+id = "noctalia/plugin-manager"
+name = "Plugin Manager"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Noctalia Community"
+license = "MIT"
+dependencies = []
+tags = ["utility"]
+icon = "puzzle"
+description = "Compatibility notice: plugin management is built into Noctalia v5."
+deprecated = true
+
+[[panel]]
+id = "compatibility"
+entry = "compatibility.luau"
+width = 460
+height = 260
+placement = "floating"
+position = "center"

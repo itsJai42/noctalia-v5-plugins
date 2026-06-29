@@ -1,0 +1,38 @@
+id = "noctalia/niri-auto-tile"
+name = "Niri Auto Tile"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Noctalia Community"
+license = "MIT"
+dependencies = ["python", "niri"]
+tags = ["niri", "bar", "utility"]
+icon = "layout-columns"
+description = "Automatically size Niri columns with the bundled daemon."
+
+[[setting]]
+key = "enabled"
+type = "bool"
+label_key = "settings.enabled"
+default = true
+
+[[setting]]
+key = "max_visible"
+type = "int"
+label_key = "settings.max_visible"
+default = 4
+min = 1
+max = 8
+
+[[setting]]
+key = "only_at_max"
+type = "bool"
+label_key = "settings.only_at_max"
+default = true
+
+[[service]]
+id = "auto-tile-service"
+entry = "service.luau"
+
+[[widget]]
+id = "auto-tile"
+entry = "widget.luau"

@@ -1,0 +1,5 @@
+{
+  "title": "Arch Updater", "checking": "Checking for updates...", "up_to_date": "System is up to date",
+  "available": "{count} updates available", "refresh": "Refresh", "install": "Install updates",
+  "settings": { "system_cmd": "System update check command", "aur_cmd": "AUR update check command", "include_flatpak": "Include Flatpak updates", "update_cmd": "Update command", "refresh_minutes": "Refresh interval (minutes)" }
+}

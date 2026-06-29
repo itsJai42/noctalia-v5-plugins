@@ -1,0 +1,4 @@
+{
+  "title": "Model Usage", "unavailable": "Usage data unavailable", "summary": "{provider}: {sessions} sessions, {messages} messages", "sessions": "{count} sessions", "messages": "{count} messages",
+  "settings": { "provider": "Provider", "refresh_seconds": "Refresh interval (seconds)", "providers": { "claude": "Claude Code", "codex": "Codex" } }
+}

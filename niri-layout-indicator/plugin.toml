@@ -1,0 +1,23 @@
+id = "noctalia/niri-layout-indicator"
+name = "Niri Layout Indicator"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "Alnrog"
+license = "MIT"
+dependencies = ["niri"]
+tags = ["bar", "niri", "keyboard"]
+icon = "language"
+description = "Display and switch the active Niri keyboard layout."
+
+[[widget]]
+id = "layout"
+entry = "layout.luau"
+
+  [[widget.setting]]
+  key = "poll_interval_ms"
+  type = "int"
+  label_key = "settings.poll_interval"
+  default = 750
+  min = 250
+  max = 10000
+  step = 250

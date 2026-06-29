@@ -1,0 +1,1 @@
+{ "running": "Auto tiling is running", "stopped": "Auto tiling is stopped", "settings": { "enabled": "Start automatically", "max_visible": "Maximum visible columns", "only_at_max": "Resize only at maximum" } }

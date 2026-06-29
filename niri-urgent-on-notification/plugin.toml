@@ -1,0 +1,14 @@
+id = "noctalia/niri-urgent-on-notification"
+name = "Niri Urgent Windows"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "matt-hb"
+license = "MIT"
+dependencies = ["niri"]
+tags = ["niri", "utility"]
+icon = "alert-circle"
+description = "Mark matching Niri windows urgent through plugin IPC."
+
+[[service]]
+id = "urgent-service"
+entry = "urgent.luau"

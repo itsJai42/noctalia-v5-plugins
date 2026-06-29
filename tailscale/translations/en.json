@@ -1,0 +1,1 @@
+{ "title": "Tailscale", "connect": "Connect", "disconnect": "Disconnect", "unavailable": "Tailscale status unavailable", "summary": "{state}, {peers} peers online", "settings": { "poll_seconds": "Poll interval (seconds)", "show_ip": "Show Tailscale IP" } }

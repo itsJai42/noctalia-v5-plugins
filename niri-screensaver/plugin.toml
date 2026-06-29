@@ -1,0 +1,30 @@
+id = "noctalia/niri-screensaver"
+name = "Niri Screensaver"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "jfreed-dev"
+license = "GPL-3.0-only"
+dependencies = ["niri-screensaver-launch"]
+tags = ["niri", "bar", "utility"]
+icon = "device-desktop-pause"
+description = "Launch and stop the Niri terminal screensaver."
+
+[[setting]]
+key = "launch_command"
+type = "string"
+label_key = "settings.launch_command"
+default = "niri-screensaver-launch launch"
+
+[[setting]]
+key = "kill_command"
+type = "string"
+label_key = "settings.kill_command"
+default = "niri-screensaver-launch kill"
+
+[[widget]]
+id = "screensaver"
+entry = "screensaver.luau"
+
+[[shortcut]]
+id = "screensaver-shortcut"
+entry = "shortcut.luau"

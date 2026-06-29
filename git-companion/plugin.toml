@@ -1,0 +1,51 @@
+id = "noctalia/git-companion"
+name = "Git Companion"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Thomas Philippo"
+license = "MIT"
+dependencies = ["jq", "gh or glab"]
+tags = ["bar", "development"]
+icon = "brand-git"
+description = "Show open issue and pull-request counts for a GitHub or GitLab repository."
+
+[[setting]]
+key = "platform"
+type = "select"
+label_key = "settings.platform"
+default = "github"
+options = [
+  { value = "github", label_key = "settings.platforms.github" },
+  { value = "gitlab", label_key = "settings.platforms.gitlab" },
+]
+
+[[setting]]
+key = "repository"
+type = "string"
+label_key = "settings.repository"
+description_key = "settings.repository_description"
+default = ""
+
+[[setting]]
+key = "refresh_seconds"
+type = "int"
+label_key = "settings.refresh_seconds"
+default = 60
+min = 30
+max = 3600
+
+[[service]]
+id = "git-service"
+entry = "service.luau"
+
+[[widget]]
+id = "git"
+entry = "widget.luau"
+
+[[panel]]
+id = "git-panel"
+entry = "panel.luau"
+width = 420
+height = 300
+placement = "attached"
+position = "auto"

@@ -1,0 +1,47 @@
+id = "noctalia/steam-price-watcher"
+name = "Steam Price Watcher"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Lokize"
+license = "MIT"
+dependencies = []
+tags = ["bar", "games"]
+icon = "brand-steam"
+description = "Watch Steam app prices and notify when targets are reached."
+
+[[setting]]
+key = "watchlist"
+type = "string_list"
+label_key = "settings.watchlist"
+description_key = "settings.watchlist_description"
+default = []
+
+[[setting]]
+key = "country_code"
+type = "string"
+label_key = "settings.country_code"
+default = "us"
+
+[[setting]]
+key = "check_minutes"
+type = "int"
+label_key = "settings.check_minutes"
+default = 30
+min = 5
+max = 1440
+
+[[service]]
+id = "price-service"
+entry = "service.luau"
+
+[[widget]]
+id = "prices"
+entry = "widget.luau"
+
+[[panel]]
+id = "prices-panel"
+entry = "panel.luau"
+width = 520
+height = 560
+placement = "attached"
+position = "auto"
