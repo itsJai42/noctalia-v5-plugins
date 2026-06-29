@@ -1,0 +1,78 @@
+id = "noctalia/feeling"
+name = "Feeling"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "Jai"
+license = "MIT"
+dependencies = []
+tags = ["desktop", "panel", "productivity", "health"]
+icon = "mood-smile"
+description = "A cozy mood tracker desktop widget — log today's feeling and see your week, themed to match."
+
+[[setting]]
+key = "binary_path"
+type = "string"
+default = "feeling"
+label_key = "settings.binary_path"
+description_key = "settings.binary_path_description"
+
+[[setting]]
+key = "refresh_minutes"
+type = "int"
+default = 5
+min = 1
+max = 120
+step = 1
+label_key = "settings.refresh"
+description_key = "settings.refresh_description"
+
+[[service]]
+id = "feeling-service"
+entry = "service.luau"
+
+[[desktop_widget]]
+id = "feeling-card"
+entry = "desktop.luau"
+
+  [[desktop_widget.setting]]
+  key = "card_width"
+  type = "int"
+  default = 320
+  min = 260
+  max = 560
+  step = 20
+  label_key = "settings.card_width"
+
+  [[desktop_widget.setting]]
+  key = "card_height"
+  type = "int"
+  default = 240
+  min = 180
+  max = 480
+  step = 20
+  label_key = "settings.card_height"
+
+  [[desktop_widget.setting]]
+  key = "show_week_strip"
+  type = "bool"
+  default = true
+  label_key = "settings.show_week_strip"
+
+  [[desktop_widget.setting]]
+  key = "accent_by_mood"
+  type = "bool"
+  default = true
+  label_key = "settings.accent_by_mood"
+  description_key = "settings.accent_by_mood_description"
+
+[[widget]]
+id = "feeling-bar"
+entry = "bar.luau"
+
+[[panel]]
+id = "feeling-panel"
+entry = "panel.luau"
+width = 320
+height = 200
+placement = "floating"
+position = "center"

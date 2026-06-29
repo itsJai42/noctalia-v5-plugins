@@ -1,0 +1,26 @@
+{
+  "title": "Feeling",
+  "greet_unset": "How are you?",
+  "greet_good": "Lovely to hear.",
+  "greet_okay": "Hanging in there.",
+  "greet_bad": "Be gentle with yourself.",
+  "word_good": "good",
+  "word_okay": "okay",
+  "word_bad": "low",
+  "not_logged": "not logged yet",
+  "today": "Today",
+  "no_binary": "Install `feeling` or set its path in plugin settings.",
+  "log_failed": "Could not save — is `feeling` installed?",
+  "close": "Close",
+  "settings": {
+    "binary_path": "feeling binary",
+    "binary_path_description": "Path or command for the feeling CLI (default: on PATH).",
+    "refresh": "Refresh (minutes)",
+    "refresh_description": "How often to re-read your mood data from disk.",
+    "card_width": "Card width",
+    "card_height": "Card height",
+    "show_week_strip": "Show week strip",
+    "accent_by_mood": "Accent by mood",
+    "accent_by_mood_description": "Tint the card border with today's mood color."
+  }
+}
