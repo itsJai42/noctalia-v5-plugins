@@ -1,9 +1,0 @@
-{
-  "open_url": "Open {url}",
-  "search": "Search for {query}",
-  "settings": {
-    "engine": "Search engine",
-    "direct_url": "Open URLs directly",
-    "engines": { "google": "Google", "duckduckgo": "DuckDuckGo", "bing": "Bing", "brave": "Brave" }
-  }
-}
