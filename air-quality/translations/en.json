@@ -1,0 +1,4 @@
+{
+  "title": "Air Quality", "fetch_failed": "Could not fetch air quality", "location_failed": "Could not determine location",
+  "settings": { "latitude": "Latitude", "longitude": "Longitude", "location_description": "Leave both coordinates empty to use IP geolocation", "refresh_minutes": "Refresh interval (minutes)" }
+}

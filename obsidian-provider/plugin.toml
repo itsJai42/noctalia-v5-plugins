@@ -1,0 +1,24 @@
+id = "noctalia/obsidian-provider"
+name = "Obsidian Vaults"
+version = "2.0.0"
+min_noctalia = "5.0.0"
+author = "Sergio Mendolia"
+license = "MIT"
+dependencies = ["xdg-utils"]
+tags = ["launcher", "productivity"]
+icon = "brand-obsidian"
+description = "Open Obsidian vaults from the launcher."
+
+[[launcher_provider]]
+id = "obsidian"
+entry = "obsidian.luau"
+prefix = "/obs"
+glyph = "brand-obsidian"
+include_in_global_search = false
+
+  [[launcher_provider.setting]]
+  key = "config_path"
+  type = "string"
+  label_key = "settings.config_path"
+  description_key = "settings.config_path_description"
+  default = "~/.config/obsidian/obsidian.json"

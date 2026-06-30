@@ -1,0 +1,65 @@
+id = "noctalia/hotkeys-cheatsheet"
+name = "Hotkeys Cheatsheet"
+version = "1.0.0"
+min_noctalia = "5.0.0"
+author = "Jai"
+license = "MIT"
+dependencies = ["python"]
+tags = ["bar", "desktop", "panel", "productivity", "utility", "niri"]
+icon = "keyboard"
+description = "View live hotkey cheatsheets from Niri, Noctalia, Kitty, TOML, JSON, and KDL config files."
+
+[[setting]]
+key = "refresh_seconds"
+type = "int"
+default = 30
+min = 5
+max = 3600
+step = 5
+label_key = "settings.refresh_seconds"
+description_key = "settings.refresh_seconds_description"
+
+[[setting]]
+key = "python_binary"
+type = "string"
+default = "python3"
+label_key = "settings.python_binary"
+description_key = "settings.python_binary_description"
+
+[[service]]
+id = "hotkeys-service"
+entry = "service.luau"
+
+[[widget]]
+id = "hotkeys"
+entry = "widget.luau"
+
+[[desktop_widget]]
+id = "hotkeys-card"
+entry = "desktop.luau"
+
+  [[desktop_widget.setting]]
+  key = "card_width"
+  type = "int"
+  default = 520
+  min = 320
+  max = 900
+  step = 20
+  label_key = "settings.card_width"
+
+  [[desktop_widget.setting]]
+  key = "card_height"
+  type = "int"
+  default = 520
+  min = 260
+  max = 900
+  step = 20
+  label_key = "settings.card_height"
+
+[[panel]]
+id = "hotkeys-panel"
+entry = "panel.luau"
+width = 760
+height = 720
+placement = "attached"
+position = "auto"

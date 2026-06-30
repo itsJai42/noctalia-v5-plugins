@@ -1,0 +1,1 @@
+{ "title": "Parallax Wallpaper", "unsupported": "Noctalia v5 plugins cannot create shell background surfaces or receive pointer position, so the v4 parallax effect has no safe v5 API equivalent.", "close": "Close" }

@@ -1,0 +1,1 @@
+{ "title": "IP Monitor", "fetch_failed": "Could not fetch public IP", "copied": "IP address copied", "city": "City", "region": "Region", "country": "Country", "provider": "Provider", "timezone": "Timezone", "settings": { "refresh_seconds": "Refresh interval (seconds)" } }
